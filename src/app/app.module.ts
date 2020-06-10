@@ -9,6 +9,8 @@ import { HomeComponent } from './components/home/home.component';
 import { UsersComponent } from './components/users/users.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { UserViewComponent } from './components/user-view/user-view.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { UserViewComponent } from './components/user-view/user-view.component';
     HomeComponent,
     UsersComponent,
     AddUserComponent,
-    UserViewComponent
+    UserViewComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

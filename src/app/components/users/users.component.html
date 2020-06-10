@@ -1,1 +1,48 @@
-<p>users works!</p>
+<main>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <h1>usuarios</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <body>
+        <section class="s1">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <table class="striped responsive-table">
+                            <thead>
+                                <tr>
+                                    <th class="center-align">#</th>
+                                    <th>Nombre</th>
+                                    <th>Usuario</th>
+                                    <th>Website</th>
+                                    <th class="center-align">Mas informaciión</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let user of usersList">
+                                    <td class="center-align">{{user.id}}</td>
+                                    <td>{{user.name}}</td>
+                                    <td>{{user.username}}</td>
+                                    <td>
+                                        <a href="#">{{user.website}}</a>
+                                    </td>
+                                    <td class="center-align">
+                                        <a routerLink="/user/{{user.id}}">
+                                            <i class="material-icons">visibility</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</main>
