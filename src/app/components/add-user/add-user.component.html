@@ -1,1 +1,55 @@
-<p>add-user works!</p>
+<main>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <h2>Formulario</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <body>
+        <section class="form">
+            <div class="container">
+                <div class="row">
+                    <form [formGroup]="formData" (ngSubmit)="sendData()">
+                        <div class="row">
+                            <div class="input-field col s12 center-align">
+                                <input id="title" name="title" type="text" formControlName="title" class="validate">
+                                <label for="title">Titulo: </label>
+                            </div>
+                            <div class="input-field col s12 center-align">
+                                <input id="body" name="body" type="text" formControlName="body" class="validate">
+                                <label for="body">Mensaje: </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button type="submit" [disabled]="!formData.valid" class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="loader" *ngIf="loader">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <div class="preloader-wrapper big active">
+                            <div class="spinner-layer spinner-blue-only">
+                                <div class="circle-clipper left">
+                                <div class="circle"></div>
+                                </div><div class="gap-patch">
+                                <div class="circle"></div>
+                                </div><div class="circle-clipper right">
+                                <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</main>
