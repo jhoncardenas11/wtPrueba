@@ -3,13 +3,34 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 center-align">
-                    <h1>{{userInfo.name}}</h1>
+                    <h1 class="title">{{userInfo.name}}</h1>
+                    <div class="divider"></div>
                 </div>
             </div>
         </div>
     </header>
 
     <body>
+        <section class="loader" *ngIf="loader">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <div class="preloader-wrapper big active">
+                            <div class="spinner-layer spinner-blue-only">
+                                <div class="circle-clipper left">
+                                <div class="circle"></div>
+                                </div><div class="gap-patch">
+                                <div class="circle"></div>
+                                </div><div class="circle-clipper right">
+                                <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section class="s1">
             <div class="container">
                 <div class="row">
@@ -18,33 +39,36 @@
                             <div class="card-content">
                                 <img src="/assets/images/userIcon.png" alt="user imagen" class="circle responsive-img">
                                 <span class="card-title">Usuario: {{userInfo.username}}</span>
-                                <div class="divider"></div>
+                                <hr>
                                 <div class="generalInfo">
                                     <h5>Datos generales</h5>
                                     <p>
                                         <span>Teléfono: </span>
-                                        <a href="tel:#">{{userInfo.phone}}</a>
+                                        <a href="tel:{{userInfo.phone}}">{{userInfo.phone}}</a>
                                     </p>
-                                    <p><span>Correo electrónico:</span> {{userInfo.email}}</p>
+                                    <p>
+                                        <span>Correo electrónico: </span>
+                                        <a href="mailto:{{userInfo.email}}">{{userInfo.email}}</a>
+                                    </p>
                                     <p>
                                         <span>Sitio web: </span>
-                                        <a href="mailto:#">{{userInfo.website}}</a>
+                                        <a href="#">{{userInfo.website}}</a>
                                     </p>
                                 </div>
-                                <div class="divider"></div>
+                                <hr>
                                 <div class="companyInfo">
                                     <h5>Datos compañia</h5>
-                                    <p><span>Compañia: {{userInfo.company.name}}</span></p>
-                                    <p><span>Sector: {{userInfo.company.bs}}</span></p>
-                                    <p><span>Etiquetas: {{userInfo.company.catchPhrase}}</span></p>
+                                    <p><span>Compañia: </span>{{userInfo.company.name}}</p>
+                                    <p><span>Sector: </span>{{userInfo.company.bs}}</p>
+                                    <p><span>Etiquetas: </span>{{userInfo.company.catchPhrase}}</p>
                                 </div>
-                                <div class="divider"></div>
-                                <div class="companyInfo">
+                                <hr>
+                                <div class="regionalInfo">
                                     <h5>Datos regionales</h5>
-                                    <p><span>Ciudad: {{userInfo.address.city}}</span></p>
-                                    <p><span>Calle: {{userInfo.address.street}}</span></p>
-                                    <p><span>Apto: {{userInfo.address.suite}}</span></p>
-                                    <p><span>Codigo postal: {{userInfo.address.zipcode}}</span></p>
+                                    <p><span>Ciudad: </span>{{userInfo.address.city}}</p>
+                                    <p><span>Calle: </span>{{userInfo.address.street}}</p>
+                                    <p><span>Apto: </span>{{userInfo.address.suite}}</p>
+                                    <p><span>Codigo postal: </span>{{userInfo.address.zipcode}}</p>
                                 </div>
                             </div>
                         </div>

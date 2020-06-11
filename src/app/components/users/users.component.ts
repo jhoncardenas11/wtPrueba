@@ -8,6 +8,7 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class UsersComponent implements OnInit {
 
+  loader = true;
   usersList: any;
 
   constructor(private usersService: UsersService) { }
@@ -19,7 +20,7 @@ export class UsersComponent implements OnInit {
   getUsersList() {
     this.usersService.getUSers().subscribe((data) => {
       this.usersList = data;
-      console.log(this.usersList);
+      this.loader = false;
     });
   }
 
