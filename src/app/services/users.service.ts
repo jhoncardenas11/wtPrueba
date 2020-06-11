@@ -21,7 +21,8 @@ export class UsersService {
     return this.http.post(`${environment.url}/posts`, {
       body,
       headers: {
-        "Content-type": "application/json; charset=UTF-8"
+        "Content-type": "application/json; charset=UTF-8",
+        "Access-Control-Allow-Origin":"*"
       }
     });
   }
