@@ -45,6 +45,7 @@ export class AddUserComponent implements OnInit {
         icon: 'error',
         title: 'Datos no enviados',
       })
+      this.loader = false;
     });
   }
 
